@@ -1,0 +1,93 @@
+Выполнение задания № 3
+1. Создаем папку для задания .../task_3
+
+2. Создаем файл my_commands.txt для ведения дневника используемых комманд
+
+3. Создаем папку для репозитория .../bogomaz_hw_3
+
+4. В папке .../bogomaz_hw_3 инициализируем git
+    git init
+
+5. Связываем репозиторий с удаленным репозиторием из задания № 1
+    git remote add origin https://github.com/dbogomaz/bogomaz_hw.git
+
+6. Скачиваем содержимое удаленного репозитория в локальный
+    git pull origin main
+
+7.  Отсоединяемся от удаленного репозитория
+    git remote remove origin
+
+8. Удаляем файл my_commands.txt из локального репозитория (старый не нужен, а новый потом добавим), закоммитим
+    git add .
+    git commit -m 'my_commands.txt is deleted' 
+
+9. Переименуем ветку master на main
+    git branch -M main
+
+Ни после пункта 8, ни после пункта 9 git push не работает
+
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+Последняя инструкция работает...
+
+Теперь мы имеем все файлы из задания № 1 в репозитории для задания № 3. Здесь же исправим файл README.md
+git add .
+git commit -m 'README.md is changed'
+git push 
+
+Сейчас push сработал...
+
+10. Создадим файл comment_and_rating.cpp и опять же закоммитим
+    git add .
+    git commit -m 'comment_and_rating.cpp is added'
+    git push 
+
+11. Создадим новую ветку rating и перейдем на нее, в ней изменим файл comment_and_rating.cpp, закоммитим
+    git branch rating
+    git checkout rating
+    git add .
+    git commit -m 'rating'
+
+12. Перейдем на ветку main, cоздадим новую ветку comment и перейдем на нее
+    git checkout main
+    git branch comment
+    git checkout comment
+
+13. Изменим файл comment_and_rating.cpp, закоммитим
+    git add .
+    git commit -m 'Comment added'
+
+14. Перейдем на ветку main
+    git checkout main
+
+15. Сольем ветку main с веткой rating
+    git merge rating 
+
+16. Сольем ветку main с веткой comment
+    git merge comment 
+
+    Возник конфликт - оставляем оба варианта...
+
+    Коммитим и Пушем
+    git add .
+    git commit -m 'Comment added'
+    
+17. Создаем удаленный репозиторий на GitHub
+    bogomaz_hw_3
+
+18. Связываем локальный и удаленные репозитории 
+    git remote add origin https://github.com/dbogomaz/bogomaz_hw_3.git
+
+19. Зальем содержимое локального репозитория в удаленный
+    git push origin main
+
+    ЗАДАНИЕ ВЫПОЛНЕНО
+
+    Переносим файл my_commands.txt в репозиторий и коммитим
+    git add .
+    git commit -m 'Task 3 is done !'
+    git push
+    
