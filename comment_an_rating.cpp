@@ -4,5 +4,5 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello git!" << endl;
+    cout << "Comment was added" << endl;
 }
